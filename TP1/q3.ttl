@@ -1,0 +1,33 @@
+@prefix : <http://example.org/music#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+:Jupiter a :Symphony ;
+    :title "Symphonie n°41 en ut majeur" ;
+    :composer :Mozart ;
+    :hasPart :Allegro_Vivace, :Andante_Cantabile, :Menuetto, :Molto_Allegro ;
+    :recordedBy :London_Symphony_Orchestra ;
+    :conductor :Claudio_Abbado ;
+    :recordingYear "1980"^^xsd:gYear .
+
+:Mozart a foaf:Person ;
+    foaf:name "Wolfgang Amadeus Mozart" .
+
+:London_Symphony_Orchestra a :Orchestra ;
+    foaf:name "London Symphony Orchestra" .
+
+:Claudio_Abbado a foaf:Person ;
+    foaf:name "Claudio Abbado" .
+
+:Allegro_Vivace a :Movement ;
+    rdfs:label "Allegro Vivace" .
+
+:Andante_Cantabile a :Movement ;
+    rdfs:label "Andante Cantabile" .
+
+:Menuetto a :Movement ;
+    rdfs:label "Menuetto" .
+
+:Molto_Allegro a :Movement ;
+    rdfs:label "Molto Allegro" .
