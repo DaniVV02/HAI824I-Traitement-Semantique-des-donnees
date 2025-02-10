@@ -1,0 +1,59 @@
+@prefix db: <http://dbpedia.org/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix cwrc: <https://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix mo: <http://purl.org/ontology/mo/> . 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+db:Mozart
+    rdf:label "Wolfgang Amadeus Mozart" ;
+    rdf:type db:Person, mo:Composer ;
+    mads:birthPlace "Salzbourg" ;
+    mads:birthDate "1756-01-27"^^xsd:date ;
+    mads:deathPlace "Vienne" ;
+    mads:deathDate "1791-12-05"^^xsd:date ;
+    cwrc:sonOf db:Leopold_Mozart ;
+    owl:spouse db:Constance_Weber .
+
+db:Leopold_Mozart
+    rdf:label "Léopold Mozart" ;
+    rdf:type db:Person .
+
+db:Constance_Weber
+    rdf:label "Constance Weber" ;
+    rdf:type db:Person .
+
+db:LaFluteEnchantee 
+    rdf:type db:Oeuvre ;
+    rdf:type db:Opera ;
+    rdf:label "La flute enchantée".
+            
+
+db:Jupiter 
+    rdf:type db:Oeuvre ;
+    rdf:type db:Symphonie ;
+    mo:movement db:MouvementsJupiter.
+
+db:MouvementsJupiter 
+    rdf:type rdf:Seq ;
+    rdf:_1 "Allegro Vivace" ;
+       rdf:_2 "Andante Cantabile" ;
+    rdf:_3 "Menuetto" ;
+    rdf:_4 "Molto Allegro" .
+
+db:OchestreSymphoniqueDeLondres
+    rdf:label "L'orcestre symphonique de Londres" ;
+    rdf:type mo:Orchestration, mo:MusicGroup.
+
+db:JupiterRecording 
+    rdf:type mo:Recording ;
+    mo:recording_of db:Jupiter ;
+    mo:performer db:OrchestreSymphoniqueDeLondres ;
+    mo:conductor db:Claudio_Abbado ;
+    mo:recorded_in "1980"^^xsd:gYear .
+
+
+db:Claudio_Abbado 
+    rdf:type db:Person ;
+    rdf:label "Claudio Abbado" .
