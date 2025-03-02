@@ -1,0 +1,52 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix db: <http://dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix cwrc: <https://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+db:Vincent_van_Gogh
+    rdf:label "Vincent van Gogh" ;
+    rdf:type db:Person ;
+    mads:birthPlace "Zundert" ;
+    mads:birthDate "1853-03-30"^^xsd:date ;
+    mads:deathPlace "Auvers-sur-Oise" ;
+    mads:deathDate "1890-07-29"^^xsd:date ;
+    cwrc:brotherOf db:Theo_van_Gogh .
+
+db:Theo_van_Gogh
+    rdf:label "Theo van Gogh" ;
+    rdf:type db:Person ;
+    cwrc:brotherOf db:Vincent_van_Gogh .
+
+db:La_Nuit_étoilée
+    rdf:label "La Nuit étoilée" ;
+    rdf:type db:Oeuvre ;
+    rdf:type db:Peinture ;
+    mo:creator db:Vincent_van_Gogh ;
+    mo:creationDate "1889"^^xsd:gYear .
+
+db:Les_Tournesols
+    rdf:label "Les Tournesols" ;
+    rdf:type db:Oeuvre ;
+    rdf:type db:Peinture ;
+    mo:creator db:Vincent_van_Gogh ;
+    mo:creationDate "1888"^^xsd:gYear , "1889"^^xsd:gYear .
+
+db:Museum_of_Modern_Art
+    rdf:label "Museum of Modern Art" ;
+    rdf:type  db:Museum ;
+    mo:location "New York" ;
+    mo:expose db:La_Nuit_étoilée .
+
+
+db:National_Gallery_London
+    rdf:label "National Gallery" ;
+    rdf:type <http://www.disit.org/km4city/schema#Art_galleries> ;
+    mo:location "London" ;
+    mo:conserve db:Les_Tournesols .
+
+
+

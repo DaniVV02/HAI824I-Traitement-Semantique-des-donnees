@@ -1,33 +1,55 @@
-@prefix : <http://example.org/music#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix cwrc: <https://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <http://schema.org/> .
 
-:Jupiter a :Symphony ;
-    :title "Symphonie n°41 en ut majeur" ;
-    :composer :Mozart ;
-    :hasPart :Allegro_Vivace, :Andante_Cantabile, :Menuetto, :Molto_Allegro ;
-    :recordedBy :London_Symphony_Orchestra ;
-    :conductor :Claudio_Abbado ;
-    :recordingYear "1980"^^xsd:gYear .
 
-:Mozart a foaf:Person ;
-    foaf:name "Wolfgang Amadeus Mozart" .
+dbr:Mozart
+    rdfs:label "Wolfgang Amadeus Mozart" ;
+    rdf:type dbo:Person, mo:Composer ;
+    dbo:notableWork dbr:LaFluteEnchantee ;
+    dbo:notableWork dbr:Jupiter .
+    
 
-:London_Symphony_Orchestra a :Orchestra ;
-    foaf:name "London Symphony Orchestra" .
+dbr:Jupiter
+    rdfs:label "Jupiter" ;
+    rdf:type dbo:MusicalWork ;
+    dbo:genre dbo:Symphony ;
+    mo:recorded_in "1980"^^xsd:gYear;
+    dbo:recorded_in dbr:JupiterRecording ;
+    mo:performer dbr:OrchestreSymphoniqueDeLondres ;
+    mo:conductor dbr:Claudio_Abbado ;
+    mo:movement dbr:MouvementsJupiter .
 
-:Claudio_Abbado a foaf:Person ;
-    foaf:name "Claudio Abbado" .
+dbr:LaFluteEnchantee 
+    rdf:type dbo:MusicalWork ;
+    rdf:type dbr:Opera ;
+    rdfs:label "La flute enchantée". 
 
-:Allegro_Vivace a :Movement ;
-    rdfs:label "Allegro Vivace" .
+dbr:MouvementsJupiter 
+    rdf:type rdf:Seq ;
+    rdf:_1 "Allegro Vivace" ;
+    rdf:_2 "Andante Cantabile" ;
+    rdf:_3 "Menuetto" ;
+    rdf:_4 "Molto Allegro" .
 
-:Andante_Cantabile a :Movement ;
-    rdfs:label "Andante Cantabile" .
+dbr:Claudio_Abbado 
+    rdf:type dbr:Person ;
+    rdfs:label "Claudio Abbado" .
 
-:Menuetto a :Movement ;
-    rdfs:label "Menuetto" .
+dbr:OrchestreSymphoniqueDeLondres
+    rdfs:label "L'orchestre symphonique de Londres" ;
+    rdf:type mo:Orchestration, mo:MusicGroup.
 
-:Molto_Allegro a :Movement ;
-    rdfs:label "Molto Allegro" .
+dbr:JupiterRecording
+    rdf:type mo:Recording ;
+    mo:recording_of dbr:Jupiter ;
+    mo:performer dbr:OrchestreSymphoniqueDeLondres ;
+    mo:conductor dbr:Claudio_Abbado ;
+    mo:recorded_in "1980"^^xsd:gYear .

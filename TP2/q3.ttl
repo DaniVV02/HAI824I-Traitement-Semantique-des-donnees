@@ -1,0 +1,55 @@
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix mads: <http://www.loc.gov/mads/rdf/v1#> .
+@prefix cwrc: <https://sparql.cwrc.ca/ontologies/cwrc#> .
+@prefix mo: <http://purl.org/ontology/mo/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+
+
+dbr:Mozart
+    rdfs:label "Wolfgang Amadeus Mozart" ;
+    rdf:type dbo:Person, mo:Composer ;
+    dbo:notableWork dbr:LaFluteEnchantee ;
+    dbo:notableWork dbr:Jupiter .
+    
+
+dbr:Jupiter
+    rdfs:label "Jupiter" ;
+    rdf:type dbo:MusicalWork ;
+    dbo:genre dbo:Symphony ;
+    mo:recorded_in "1980"^^xsd:gYear;
+    dbo:recorded_in dbr:JupiterRecording ;
+    mo:performer dbr:OrchestreSymphoniqueDeLondres ;
+    mo:conductor dbr:Claudio_Abbado ;
+    mo:movement dbr:MouvementsJupiter .
+
+dbr:LaFluteEnchantee 
+    rdf:type dbo:MusicalWork ;
+    rdf:type dbr:Opera ;
+    rdfs:label "La flute enchantée". 
+
+dbr:MouvementsJupiter 
+    rdf:type rdf:Seq ;
+    rdf:_1 "Allegro Vivace" ;
+    rdf:_2 "Andante Cantabile" ;
+    rdf:_3 "Menuetto" ;
+    rdf:_4 "Molto Allegro" .
+
+dbr:Claudio_Abbado 
+    rdf:type dbr:Person ;
+    rdfs:label "Claudio Abbado" .
+
+dbr:OrchestreSymphoniqueDeLondres
+    rdfs:label "L'orchestre symphonique de Londres" ;
+    rdf:type mo:Orchestration, mo:MusicGroup.
+
+dbr:JupiterRecording
+    rdf:type mo:Recording ;
+    mo:recording_of dbr:Jupiter ;
+    mo:performer dbr:OrchestreSymphoniqueDeLondres ;
+    mo:conductor dbr:Claudio_Abbado ;
+    mo:recorded_in "1980"^^xsd:gYear .
