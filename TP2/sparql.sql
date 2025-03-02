@@ -81,13 +81,18 @@ LIMIT 20
 
 -- 5.
 
-SELECT *
+SELECT * 
 WHERE {
-  ?mAb imgt:hasProduct ?obj .
-}
-LIMIT 30
+  ?mAb imgt:hasProduct ?product .
+  ?product imgt:hasStudyProduct ?study .
+} LIMIT 30
+ 
 
 -- 6. 
+
+SELECT distinct * WHERE {
+  ?mAb imgt:inn_name ?inn_name .
+} LIMIT 20
 
 -- a.
 
@@ -105,7 +110,12 @@ WHERE {
   ?mAb3 imgt:inn_name "relatlimab" .
 }
 
+-- ou aussi
 
+SELECT distinct * WHERE {
+  ?mAb imgt:inn_name ?inn_name .
+  Filter (Contains(?inn_name,"belimumab") || Contains(?inn_name,"oxelumab")|| Contains(?inn_name,"relatlimab"))
+} LIMIT 20
 -- b.
 
 SELECT *
@@ -118,6 +128,18 @@ WHERE {
   
   ?mAb sio:SIO_000291 ?target
 }
+
+--ou plutot ceci :
+
+SELECT distinct *
+WHERE {
+  ?mAb imgt:inn_name "belimumab" .
+  ?mAb imgt:hasConstruct ?const .
+  ?const obo:BFO_0000051 ?kowledge .
+  ?const imgt:hasImgtLabel ?imgtlabel .
+  ?const imgt:hasReceptorFormat ?receptformat .
+  ?mAb sio:SIO_000291 ?cible .
+} 
 
 
 SELECT *
@@ -189,8 +211,8 @@ WHERE {
   
   filter contains(str(?ind), "Melanoma") . -- si on veut reproduite l'instance EXACTE du graphe
  
-  ?target rdfs:label ?targetname . // pour que ça soit plus lisible
-  ?moa rdfs:label ?moaname . // pour que ça soit plus lisible
+  ?target rdfs:label ?targetname . -- pour que ça soit plus lisible
+  ?moa rdfs:label ?moaname . -- pour que ça soit plus lisible
   
   
 }
