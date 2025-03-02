@@ -7,7 +7,8 @@ sparql_endpoint = "http://localhost:3030/mAbKG/sparql"
 # Liste des requêtes à exécuter
 queries = {
     "1": """
-        SELECT * WHERE { ?mAb <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.imgt.org/imgt-ontology#INN> . } LIMIT 20
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        SELECT * WHERE { ?mAb rdf:type <https://www.imgt.org/imgt-ontology#INN> . } LIMIT 20
     """,
     "2": """
         SELECT * WHERE { ?mAb <http://semanticscience.org/resource/SIO_000291> ?obj . } LIMIT 20
