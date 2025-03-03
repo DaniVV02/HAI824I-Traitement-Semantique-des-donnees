@@ -164,7 +164,7 @@ WHERE {
   ?mAb sio:SIO_000291 ?target
 }
 
-// c.
+-- c.
 
 SELECT *
 WHERE {
@@ -215,6 +215,15 @@ WHERE {
   ?moa rdfs:label ?moaname . -- pour que ça soit plus lisible
   
   
+}
+
+
+-- 7
+
+SELECT * WHERE {
+  ?mAb imgt:inn_name ?name.
+  ?mAb imgt:hasClinicalIndication imgt:Solid_tumors .
+
 }
 
 
