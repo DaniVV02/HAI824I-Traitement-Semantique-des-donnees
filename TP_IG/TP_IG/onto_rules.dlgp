@@ -1,0 +1,9 @@
+
+% Rules that classify the characters among jedi and sith
+
+sageJedi(X) :- hasSaber(X, Y), hasColor(Y, "green").
+sith(X) :- hasSaber(X, Y), hasColor(Y, "red").
+jedi(X) :- hasSaber(X, Y), hasColor(Y, "green").
+jedi(X) :- hasSaber(X, Y), hasColor(Y, "blue").
+jedi(X) :- hasSaber(X, Y), hasColor(Y, "yellow").
+

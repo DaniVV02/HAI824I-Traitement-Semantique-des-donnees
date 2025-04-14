@@ -1,0 +1,3 @@
+%q1 : trouver tous les personnages ayant un sabre
+
+?(X) :- hasSaber(X,Y).

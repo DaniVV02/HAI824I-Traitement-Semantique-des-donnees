@@ -1,0 +1,17 @@
+% mappings de haut niveau
+
+@view m2: <./views_SW_IMDB.vd>  % fichier de vues attaché à SW_IMDB
+@view m1: <./views_SW_BANK.vd>  % fichier de vues attaché à SW_BANK
+
+% mappings de haut niveau associés aux vues de SW_BANK
+
+pilot(Charac) :-  m1:view_pilot(Charac). 
+hasSaber(Charac,Saber) :- m1:view_lightsaber(Charac,Saber,Color).
+hasColor(Saber,Color) :- m1:view_lightsaber(Charac,Saber,Color).
+
+% mappings de haut niveau associés aux vues de SW_IMDB
+
+hasName(ID,Name) :- m2:view_person(ID, Name).
+hasTitle(ID,Title) :- m2:view_title(ID,Title).
+
+% TO DO : ajouter de nouveaux mappings

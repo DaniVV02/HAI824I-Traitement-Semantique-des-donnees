@@ -1,0 +1,45 @@
+{
+  "datasources" : [
+    {
+      "id" : "SW_BANK",
+      "protocol" : "SQLite",
+      "parameters" : {
+        "url" : "./sources/sw_bank.db"
+      }
+    }
+      ],
+
+  "views" : [
+    {
+      "id" : "view_pilot",
+      "datasource" : "SW_BANK",
+      "signature" : [
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        }
+      ],
+      "query" : "select character from vehicle where vehicleType='starship'"
+    },
+    {
+      "id" : "view_lightsaber",
+      "datasource" : "SW_BANK",
+      "signature" : [
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        },
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        },
+	{
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        }
+      ],
+      "query" : "select character, saber, color from lightsaber"
+    }    
+  ]
+}
+

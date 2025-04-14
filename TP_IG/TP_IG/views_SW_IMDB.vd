@@ -1,0 +1,44 @@
+{
+  "datasources" : [
+    {
+      "id" : "SW_IMDB",
+      "protocol" : "SQLite",
+      "parameters" : {
+        "url" : "./sources/sw_imdb.db"
+      }
+    }
+  ],
+
+  "views" : [
+    {
+      "id" : "view_person",
+      "datasource" : "SW_IMDB",
+      "signature" : [
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        },
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        }
+      ],
+      "query" : "select nconst, primaryName from person"
+    },
+    {
+      "id" : "view_title",
+      "datasource" : "SW_IMDB",
+      "signature" : [
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        },
+        {
+          "datatype" : "xsd:string",
+          "ifMissing" : "FREEZE"
+        }
+      ],
+      "query" : "select tconst, primarytitle from title"
+    }  ]
+}
+
