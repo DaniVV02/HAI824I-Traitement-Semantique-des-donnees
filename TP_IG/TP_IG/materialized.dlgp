@@ -1,0 +1,53 @@
+@facts
+hasColor("anakin-saber", "blue").
+hasColor("darth-vader-saber", "red").
+hasColor("luke-saber", "green").
+hasColor("obi-wan-saber-1", "blue").
+hasColor("obi-wan-saber-2", "blue").
+hasColor("obi-wan-saber-3", "blue").
+hasColor("rey-saber", "yellow").
+hasName("nm0000027", "Alec Guinness").
+hasName("nm0000148", "Harrison Ford").
+hasName("nm0000184", "George Lucas").
+hasName("nm0000191", "Ewan McGregor").
+hasName("nm0000204", "Natalie Portman").
+hasName("nm0000402", "Carrie Fisher").
+hasName("nm0000434", "Mark Hamill").
+hasName("nm0000469", "James Earl Jones").
+hasName("nm0000489", "Christopher Lee").
+hasName("nm0000553", "Liam Neeson").
+hasName("nm0001850", "Billy Dee Williams").
+hasName("nm0002354", "John Williams").
+hasName("nm0005157", "Jake Lloyd").
+hasName("nm0009190", "J.J. Abrams").
+hasName("nm0159789", "Hayden Christensen").
+hasName("nm0426059", "Rian Johnson").
+hasName("nm0428065", "Felicity Jones").
+hasName("nm0449984", "Irvin Kershner").
+hasName("nm0549658", "Richard Marquand").
+hasName("nm1872855", "Spencer Wilding").
+hasName("nm2284484", "Gareth Edwards").
+hasName("nm3485845", "Adam Driver").
+hasName("nm3915784", "John Boyega").
+hasName("nm5397459", "Daisy Ridley").
+hasSaber("anakin-skywalker", "anakin-saber").
+hasSaber("darth-vader", "darth-vader-saber").
+hasSaber("luke-skywalker", "luke-saber").
+hasSaber("obi-wan-kenobi", "obi-wan-saber-1").
+hasSaber("obi-wan-kenobi", "obi-wan-saber-2").
+hasSaber("obi-wan-kenobi", "obi-wan-saber-3").
+hasSaber("rey", "rey-saber").
+hasTitle("tt0076759", "Star Wars: Episode IV - A New Hope").
+hasTitle("tt0080684", "Star Wars: Episode V - The Empire Strikes Back").
+hasTitle("tt0086190", "Star Wars: Episode VI - Return of the Jedi").
+hasTitle("tt0120915", "Star Wars: Episode I - The Phantom Menace").
+hasTitle("tt0121765", "Star Wars: Episode II - Attack of the Clones").
+hasTitle("tt0121766", "Star Wars: Episode III - Revenge of the Sith").
+hasTitle("tt2488496", "Star Wars: Episode VII - The Force Awakens").
+hasTitle("tt2527336", "Star Wars: Episode VIII - The Last Jedi").
+hasTitle("tt2527338", "Star Wars: Episode IX - The Rise of Skywalker").
+hasTitle("tt3748528", "Rogue One: A Star Wars Story").
+pilot("anakin-skywalker").
+pilot("luke-skywalker").
+pilot("rey").
+
