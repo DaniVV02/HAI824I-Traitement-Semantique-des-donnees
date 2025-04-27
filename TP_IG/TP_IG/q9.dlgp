@@ -1,0 +1,5 @@
+@queries
+?(Name) :-
+    plays(IDA, "darth-vader"),
+    hasName(IDA, Name).
+

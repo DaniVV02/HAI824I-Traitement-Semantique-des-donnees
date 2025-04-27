@@ -6,4 +6,6 @@ sith(X) :- hasSaber(X, Y), hasColor(Y, "red").
 jedi(X) :- hasSaber(X, Y), hasColor(Y, "green").
 jedi(X) :- hasSaber(X, Y), hasColor(Y, "blue").
 jedi(X) :- hasSaber(X, Y), hasColor(Y, "yellow").
-
+character(X) :- jedi(X).
+character(X) :- sith(X).
+character(X) :- sageJedi(X).

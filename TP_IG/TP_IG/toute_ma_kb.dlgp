@@ -1,0 +1,15 @@
+@rules
+hasColor(Saber, Color) :- view_lightsaber(Charac, Saber, Color).
+hasName(ID, Name) :- view_person(ID, Name).
+hasSaber(Charac, Saber) :- view_lightsaber(Charac, Saber, Color).
+hasTitle(ID, Title) :- view_title(ID, Title).
+jedi(X) :- hasSaber(X, Y), hasColor(Y, "blue").
+jedi(X) :- hasSaber(X, Y), hasColor(Y, "green").
+jedi(X) :- hasSaber(X, Y), hasColor(Y, "yellow").
+pilot(Charac) :- view_pilot(Charac).
+sageJedi(X) :- hasSaber(X, Y), hasColor(Y, "green").
+sith(X) :- hasSaber(X, Y), hasColor(Y, "red").
+
+@queries
+?(X) :- hasSaber(X, Y).
+

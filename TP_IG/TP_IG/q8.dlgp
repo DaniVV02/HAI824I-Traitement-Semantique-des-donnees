@@ -1,0 +1,3 @@
+@queries
+?(Name) :- plays(IDA, P), jedi(P), hasName(IDA, Name).
+

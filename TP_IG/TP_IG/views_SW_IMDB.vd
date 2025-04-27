@@ -39,6 +39,39 @@
         }
       ],
       "query" : "select tconst, primarytitle from title"
-    }  ]
+    },
+    {
+    	"id" : "view_year",
+    	"datasource" : "SW_IMDB",
+    	"signature" : [
+    	  {
+    	    "datatype" : "xsd:string",
+    	    "ifMissing" : "FREEZE"
+    	  },
+    	  {
+            "datatype" : "xsd:integer",
+            "ifMissing" : "FREEZE"
+          }
+      	],
+      "query" : "select tconst, startYear from title"
+      },
+      {
+"id": "view_cast",
+"datasource": "SW_IMDB",
+"signature": [
+{ "datatype": "xsd:string", "ifMissing": "FREEZE" },
+{ "datatype": "xsd:string", "ifMissing": "FREEZE" }
+],
+"query": "SELECT nconst, tconst FROM casting WHERE category IN ('actor', 'actress')"
+},
+{
+"id": "view_plays",
+"datasource": "SW_IMDB",
+"signature": [
+{ "datatype": "xsd:string", "ifMissing": "FREEZE" },
+{ "datatype": "xsd:string", "ifMissing": "FREEZE" }
+],
+"query": "SELECT nconst, character FROM casting WHERE category IN ('actor', 'actress') AND character IS NOT NULL"
+} ]
 }
 

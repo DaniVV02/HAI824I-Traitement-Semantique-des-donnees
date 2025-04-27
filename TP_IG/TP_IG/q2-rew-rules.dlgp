@@ -1,0 +1,6 @@
+@queries
+?(X) :- hasColor(Graal_EE844, "blue"), hasSaber(X, Graal_EE844).
+?(X) :- hasColor(Graal_EE846, "yellow"), hasSaber(X, Graal_EE846).
+?(X) :- hasSaber(X, Graal_EE842), hasColor(Graal_EE842, "green").
+?(X) :- jedi(X).
+

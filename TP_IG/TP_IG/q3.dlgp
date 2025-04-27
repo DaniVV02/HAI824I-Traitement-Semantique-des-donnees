@@ -1,0 +1,3 @@
+@queries
+?(X) :- sith(X).
+

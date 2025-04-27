@@ -1,0 +1,3 @@
+@queries
+?(Name) :- castsIn(IDA, IDF), hasYear(IDF, 1977), hasName(IDA, Name).
+

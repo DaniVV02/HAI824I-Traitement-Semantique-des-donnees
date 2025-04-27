@@ -15,3 +15,7 @@ hasName(ID,Name) :- m2:view_person(ID, Name).
 hasTitle(ID,Title) :- m2:view_title(ID,Title).
 
 % TO DO : ajouter de nouveaux mappings
+
+hasYear(IDF,Year) :- m2:view_year(IDF,Year).
+castsIn(IDA,IDF) :- m2:view_cast(IDA,IDF).
+plays(IDA, Character) :- m2:view_plays(IDA, Character).

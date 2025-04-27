@@ -1,0 +1,15 @@
+@queries
+?(X) :- hasColor(Graal_EE844, "blue"), hasSaber(X, Graal_EE844).
+?(X) :- hasColor(Graal_EE844, "blue"), view_lightsaber(X, Graal_EE844, Graal_EE861), X = X.
+?(X) :- hasColor(Graal_EE846, "yellow"), hasSaber(X, Graal_EE846).
+?(X) :- hasSaber(X, Graal_EE842), hasColor(Graal_EE842, "green").
+?(X) :- hasSaber(X, Graal_EE844), view_lightsaber(Graal_EE863, Graal_EE844, "blue"), X = X.
+?(X) :- jedi(X).
+?(X) :- view_lightsaber(Graal_EE851, Graal_EE846, "yellow"), hasSaber(X, Graal_EE846), X = X.
+?(X) :- view_lightsaber(Graal_EE851, Graal_EE846, "yellow"), view_lightsaber(X, Graal_EE846, Graal_EE858), X = X.
+?(X) :- view_lightsaber(Graal_EE863, Graal_EE844, "blue"), view_lightsaber(X, Graal_EE844, Graal_EE867), X = X.
+?(X) :- view_lightsaber(Graal_EE875, Graal_EE842, "green"), hasSaber(X, Graal_EE842), X = X.
+?(X) :- view_lightsaber(X, Graal_EE842, Graal_EE873), hasColor(Graal_EE842, "green"), X = X.
+?(X) :- view_lightsaber(X, Graal_EE842, Graal_EE873), view_lightsaber(Graal_EE878, Graal_EE842, "green"), X = X.
+?(X) :- view_lightsaber(X, Graal_EE846, Graal_EE849), hasColor(Graal_EE846, "yellow"), X = X.
+
